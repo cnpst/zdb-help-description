@@ -65,7 +65,9 @@ WHERE
 
 ---
 NoSQL 데이터베이스로 필요한 쿼리 제공 및 인덱싱을 활용해 원하는 수준의 확장성과 유연성을 제공하는 문서 데이터베이스입니다
-JSON과 같은 동적 스키마형 도큐먼트 / 개발자 친화적
+JSON과 같은 동적 스키마형 도큐먼트 / 개발자 친화적  
+
+<img src="https://github.com/cnpst/zdb-help-description/blob/main/resources/images/postgresql.png" width="300" height="200">
 
 
 
