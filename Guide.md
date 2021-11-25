@@ -1,4 +1,4 @@
-# zdb-help-description
+# CloudZDB Help 작성 가이드
 
 <!-- 수평선 -->
 --- 
