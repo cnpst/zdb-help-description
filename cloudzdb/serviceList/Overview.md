@@ -14,3 +14,14 @@
 | Configuration                  | 서비스에 대한 파라메터등 구성정보를 정의 합니다.  |  
 | Shutdown                  | 서비스를 종료합니다. |
 | Restart                   | 서비스를 재시작합니다. |
+
+### 1.1 목록
++ Name : 서비스명을 표기 합니다.
++ Type  : 시스템 Tag 및 사용자 Tag를 표기 합니다.
++ Tag  : 시스템 Tag 및 사용자 Tag를 표기 하며, 시스템 Tag는 다음과 같습니다.
+|         구분        | 설명   |  
+|:---: | :--- |  
+| ha                  | HA 구조  |  
+| backup                  | backup 기능 사용 |
+| failover                   | failover 기능 사용   |  
+| public                    | public endpoint 사용   |  
