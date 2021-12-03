@@ -81,25 +81,36 @@ Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 �
         * 모니터링 : 30분, 1시간, 3시간, 6시간, 12시간 단위로 CPU Usage, Memory Usage, Storage Usage 를 확인 할 수 있습니다.
         * Event : 서비스를 제공하는 리소스에 이벤트 발생시 내용을 확인 할 수 있습니다.
         * Object Info  : 서비스를 제공하는 Kubernetes Resource 에 대한 정보를 확인 할 수 있습니다.
-            + Kind : Kubernetes Resource 의 종류
+            + Kind : Kubernetes Resource 의 종류로 포함되는 Resource 
+            
     - 목록 보기  
-         * Scale Up/Down 
-         * Storage Scale Up
-         * Show Log  
-         * Object Info 
-         * Advanced Monitoring
-         * Restart  
+         * Scale Up/Down : CPU 와 메모리를 변경 할 수 있습니다.
+         * Storage Scale Up : Storage Type 에 따라 사이즈나 IOPS 를 변경 할 수 있습니다.
+                                 사이즈는 증가만 가능하며 축소 할 수 없습니다.
+         * Show Log : 서비스를 제공하는 POD 의 로그를 확인 할 수 있습니다.
+                         이벤트 발생에 대한 내용을 로그를 통해 확인 할 수 있습니다. 
+         * Object Info :: 모니터아이콘 눌렀을때 제공하는 Object Info 와 동일
+         * Advanced Monitoring : : grafana Monitoring 로 연결되어 다양한 Monitoring 지표를 그래포로 확인 할 수 있습니다.
+         * Restart : 서비스를 제공하는 POD 를 재시작 할 수 있습니다.
  
 ## 3. Connection Info
-서비스에 대한 연결 정보를 제공 합니다.
+- 데이터베이스 접속 정보에 대해 확인 할 수 있습니다.
+- (확장 아이콘) : Connections, Network I/O 그래프를 확인 할 수 있습니다.
+- (리스트 아이콘) 
+  -  Object Info : 모니터아이콘 눌렀을때 제공하는 Object Info 와 동일
+  -  
 ### 3.1 연결 정보
-+ Admin Account : 초기 접속을 위한 admin 계정을 확인할 수 있습니다.
-+ Admin Password : admin 계정에 대한 Pasword를 확인 할 수 있습니다. 기본값은 랜덤하게 제공되며 마스킹 처리됩니다. 패스워드 확인이 필요한경우 보기 버튼을 클릭합니다. 패스워드 복사 및 수정이 가능합니다.
-+ Port : 서비스 접속을 위한 포트 확인이 가능합니다 설정을 통해 변경 가능합니다.
-+ Cluster : Cluster IP에 대해 network 설정을 확인 할 수 있습니다. Public Network로 설정한 경우 공개적으로 액세스할 수 있습니다. Private Network는 내부에서만 엑세스가 가능 합니다.
-+ Connection String : Jdbc를 통한 엑세스를 위한 Connection String을 제공 합니다.
-+ Command Line :  터미널 엑세스를 위한 접속 Command를 제공 합니다.
++ Admin Account : 서비스 관리자 계정 이름
++ Admin Password : 서비스 관리자 비밀번호
++ Port : 서비스 접속 Port 번호
++ Cluster : 동일 클러스터에 deploy 되어 있는 Pod 에서만 접속을 허용하는 Endpoint로 모든 서비스는 Cluster 가 존재합니다.
+    - Private Network (Private Load Balancer) : 동일 Cloud Service Provider의 동일 VLAN/VPC 또는 Spanning 된 Virtual Network 환경에서 접속 가능한 Endpoint
+       ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
+    - Public Network (Public Load Balancer) : 인터넷 접점(Public)에 있는 Portable IP를 부여하여 어디에서나 접속할 수 있는 Endpoint
+       ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
++ Connection String : jdbc 를 이용한 연결 명령어 예시
++ Command Line :  client tool 을 이용한 연결 명령어 예시
 
-## 4. Connection Info
+## 4. Topology
 Topology를 통해 서비스의 구성을 확인할 수 있습니다.
 H/A를 구성할 경우 Primary와 Secondary를 확인할 수 있습니다.
