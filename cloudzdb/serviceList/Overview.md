@@ -46,7 +46,7 @@
   | 기타                        | Failed, Not, BackOff, Err, Unhealthy, Unschedulable   |
   
   + Namespace : 현재 서비스의 네임스페이스를 표기 합니다.
-  + More : 정상메세지 이외의 INfo, Waring, Error정보들 표현합니다.
+  + ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/More%20icon.png) : 정상메세지 이외의 INfo, Waring, Error정보들 표현합니다.
        - 서비스 및 스토리지 생성/삭제/수정/재시작
        - DB Failover
        - Replication Error
@@ -54,26 +54,33 @@
        - 환경설정 변경
 ## 2. Resource
 서비스를 제공하는 POD 의 리소스에 대한 현황을 확인 할 수 있습니다.
-(확장아이콘) 추가적인 정보를제공 합니다.
+
+![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/expand%20icon.png) : 추가적인 정보를제공 합니다.
 + Storage   : 저장소에 대한 정보
 + Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
 + Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
 ### 2.1 Resource 화면 구성
 + Status  : 정상, 비정상을 나타냅니다.
-    - (초록색아이콘) : 정상
+    - ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/status%20green%20icon.png) : 정상
     - (노란색아이콘) : 서비스 정상, 이슈 발생
     - (빨간색아이콘) : 장애 발생
 + Name : 리소스 이름
 + Role : 리소스 역할
 + CPU(m) : 1000m 이 1 Core 를 뜻합니다.  
-CPU 사용량이 과도하게 높으면 서비스에 지연이 발생 할 수 있습니다.
-과도하게 높은 CPU 사용량이 지속 될 경우 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
+
+           CPU 사용량이 과도하게 높으면 서비스에 지연이 발생 할 수 있습니다.
+
+           과도하게 높은 CPU 사용량이 지속 될 경우 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
 + Memory(M) : Memory 사용률을 나타냅니다.  
-Memory 사용량이 100% 가 되면 서비스 장애가 발생합니다. 
-과도하게 높은 Memory 사용률은 서비스 DOWN 의 위험성에 대한 정보로 인식해야 하며 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
+              
+              Memory 사용량이 100% 가 되면 서비스 장애가 발생합니다. 
+              
+              과도하게 높은 Memory 사용률은 서비스 DOWN 의 위험성에 대한 정보로 인식해야 하며 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
 + Storage(GB) : GB 는 기가바이트를 뜻합니다.
-Storage 사용량이 100% 가 되면 서비스 장애가 발생 합니다.
-Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 해야 합니다.
+
+                Storage 사용량이 100% 가 되면 서비스 장애가 발생 합니다.
+
+                Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 해야 합니다.
 + Uptime  : 리소스 가동 시간
 가장 최근에 시작된 이후로 얼마의 시간이 지났는지 알 수 있습니다.
 + Actions : 각 POD들에 대한 Resource를 수정하거나 재기동 할 수 있으며, 모니터링을 할수 있습니다.
@@ -95,8 +102,8 @@ Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 �
  
 ## 3. Connection Info
 - 데이터베이스 접속 정보에 대해 확인 할 수 있습니다.
-- (확장 아이콘) : Connections, Network I/O 그래프를 확인 할 수 있습니다.
-- (리스트 아이콘) 
+- ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/expand%20icon.png) : Connections, Network I/O 그래프를 확인 할 수 있습니다.
+- ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/list%20icon.png) : 추가 기능
   -  Object Info : 모니터아이콘 눌렀을때 제공하는 Object Info 와 동일
   -  
 ### 3.1 연결 정보
@@ -112,11 +119,14 @@ Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 �
 + Command Line :  client tool 을 이용한 연결 명령어 예시
 
 ## 4. Topology
-서비스를 제공하는 POD 들의  구성을 확인 할 수 있습니다.  
-(확장아이콘) : [[그냥 펼치기만 하고 추가 기능이 없음]]  
-(필터아이콘) : Topology 를 구성하는 Node 필터 기능  
-(리스트아이콘)  
-Refresh : 구성 정보를 갱신하여 확인 할 수 있습니다.  
+서비스를 제공하는 POD 들의  구성을 확인 할 수 있습니다.
+
+![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/expand%20icon.png) : [[그냥 펼치기만 하고 추가 기능이 없음]]
+
+![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/filter%20icon.png) : Topology 를 구성하는 Node 필터 기능
+
+![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/list%20icon.png) : 추가 기능
+ - Refresh : 구성 정보를 갱신하여 확인 할 수 있습니다.
 
 ## 4.1 Topology 화면구성
 + Replications : HA 구성 환경에 대한 정보
@@ -126,7 +136,7 @@ Refresh : 구성 정보를 갱신하여 확인 할 수 있습니다.
 + Replications : SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보
         SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.
         이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
-+ (리스트 아이콘)
++ ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/topology%20inner%20list%20icon.png) : 추가 기능
     - Show Log : POD 의 로그를 확인 할 수 있습니다.
     - Failover : Failover 를 수행 시킬 수 있습니다.
     - Restart : POD 를 재기동 할 수 있습니다.
