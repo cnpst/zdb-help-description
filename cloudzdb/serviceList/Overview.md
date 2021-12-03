@@ -61,17 +61,18 @@
 + Storage(GB) : Storage 사용률을 나타냅니다.
 + Uptime  : POD가 기동된 시간을 나타냅니다
 + Actions : 각 POD들에 대한 Resource를 수정하거나 재기동 할 수 있으며, 모니터링을 할수 있습니다.
-       - 모니터링
-               * 모니터링
-               * Event
-               * Object Info  
-       - 목록 보기   
-               * Scale Up/Down 
-               * Storage Scale Up
-               * Show Log
-               * Object Info
-               * Advanced Monitoring   
-               * Restart   
+    - 모니터링
+        * 모니터링
+        * Event
+        * Object Info  
+    - 목록 보기  
+         * Scale Up/Down 
+         * Storage Scale Up
+         * Show Log  
+         * Object Info 
+         * Advanced Monitoring
+         * Restart  
+ 
 ## 3. Connection Info
 서비스에 대한 연결 정보를 제공 합니다.
 ### 3.1 연결 정보
