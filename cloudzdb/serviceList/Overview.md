@@ -68,19 +68,19 @@
 + Role : 리소스 역할
 + CPU(m) : CPU 사용률을 나타냅니다. 단위 (1000m = 1 Core)
 
-           CPU 사용량이 과도하게 높으면 서비스 지연이 발생 할 수 있습니다.
+      CPU 사용량이 과도하게 높으면 서비스 지연이 발생 할 수 있습니다.
 
-           과도하게 높은 CPU 사용량이 지속 될 경우 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
+      과도하게 높은 CPU 사용량이 지속 될 경우 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
 + Memory(M) : Memory 사용률을 나타냅니다. (단위 Mi = 메가바이트)
               
-              Memory 사용량이 100% 가 되면 서비스 장애가 발생합니다. 
+      Memory 사용량이 100% 가 되면 서비스 장애가 발생합니다. 
               
-              과도하게 높은 Memory 사용률은 서비스 DOWN 의 위험성에 대한 정보로 인식해야 하며 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
+      과도하게 높은 Memory 사용률은 서비스 DOWN 의 위험성에 대한 정보로 인식해야 하며 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
 + Storage(GB) : Storage 사용률을 나타냅니다. (단위 GB = 기가바이트)
 
-                Storage 사용량이 100% 가 되면 서비스 장애가 발생 합니다.
+      Storage 사용량이 100% 가 되면 서비스 장애가 발생 합니다.
 
-                Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 해야 합니다.
+      Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 해야 합니다.
 + Uptime  : 리소스 가동 시간
 가장 최근에 시작된 이후로 얼마의 시간이 지났는지 알 수 있습니다.
 + Actions : 각 POD들에 대한 Resource를 수정하거나 재기동 할 수 있으며, 모니터링을 할수 있습니다.
@@ -112,9 +112,11 @@
 + Port : 서비스 접속 Port 번호
 + Cluster : 동일 클러스터에 deploy 되어 있는 Pod 에서만 접속을 허용하는 Endpoint로 모든 서비스는 Cluster 가 존재합니다.
     - Private Network (Private Load Balancer) : 동일 Cloud Service Provider의 동일 VLAN/VPC 또는 Spanning 된 Virtual Network 환경에서 접속 가능한 Endpoint
-       ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
+       
+          ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
     - Public Network (Public Load Balancer) : 인터넷 접점(Public)에 있는 Portable IP를 부여하여 어디에서나 접속할 수 있는 Endpoint
-       ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
+       
+          ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
 + Connection String : jdbc 를 이용한 연결 명령어 예시
 + Command Line :  client tool 을 이용한 연결 명령어 예시
 
@@ -131,11 +133,15 @@
 ## 4.1 Topology 화면구성
 + Replications : HA 구성 환경에 대한 정보
 + PRIMARY : HA 환경에서 primary Role 을 가진 POD 정보 
-        PRIMARY 는 장애가 발생 했을 경우 SECONDARY 로 FAILOVER 될 수 있습니다.
-        이와 같이 pod 의 이름이 primary 이더라도 HA 환경에서 PRIMARY 나 SECONDARY 역할을 수행 할 수 있습니다.
+
+      PRIMARY 는 장애가 발생 했을 경우 SECONDARY 로 FAILOVER 될 수 있습니다.
+            
+      이와 같이 pod 의 이름이 primary 이더라도 HA 환경에서 PRIMARY 나 SECONDARY 역할을 수행 할 수 있습니다.
 + Replications : SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보
-        SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.
-        이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
+        
+      SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.
+        
+      이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
 + ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/topology%20inner%20list%20icon.png) : 추가 기능
     - Show Log : POD 의 로그를 확인 할 수 있습니다.
     - Failover : Failover 를 수행 시킬 수 있습니다.
