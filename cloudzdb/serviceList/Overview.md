@@ -1,25 +1,26 @@
 # Overview
 ## 1. Service
-서비스의 기본정보들을 확인할 수 있으며,목록 선택 메뉴를 통해 각 서비스의 자세한 내용을 확인 할 수 있습니다.
+전체적인 서비스의 상태와 구성을 확인 할 수 있습니다.
 
 ### 1.1 목록
 <!-- 표 -->
 |         구분        | 설명   |  
 |:---: | :--- |  
-| Overview                 | 기본 페이지로 Resource, Connection info, Topology에 대한 정보를 보여줍니다.  |  
-| Monitoring                 | 모니터링 페이지로 리소스 모니터링을 제공합니다. |
-| Logs                  | 서비스에 대한 로그 정보를 제공합니다.   |  
-| Tags                  | 사용자가 Tag를 만들거나 삭제 할 수 있습니다. |
-| Events                  | 콘솔 UI 사용에 대한 Event를 기록 합니다.  |  
-| Backup                  | 서비스에 대해 스케쥴 백업 설정 및 사용자 백업을 할 수 있습니다. |
-| Configuration                  | 서비스에 대한 파라메터등 구성정보를 정의 합니다.  |  
-| Shutdown                  | 서비스를 종료합니다. |
-| Restart                   | 서비스를 재시작합니다. |
+| Overview                 | 전체적인 상태를 표현  |  
+| Monitoring                 | 서비스에 대한 모니터링 기능 |
+| Logs                  | 로그 확인 기능  |  
+| Tags                  | 태그 기능 |
+| Events                  | 서비스에 대한 이벤트 정보 확인  |  
+| Backup                  | 서비스에 백업 기능 |
+| Configuration                  | 환경 설정 관리 기능  |  
+| Shutdown                  | 서비스 종료 기능 |
+| Restart                   | 서비스를 재시작 기능 |
+| Delete                    | 서비스 삭제 기능 |
 
 ### 1.2 서비스 구성 정보
-+ Name : 서비스명을 표기 합니다.
-+ Type  : 시스템 Tag 및 사용자 Tag를 표기 합니다.
-+ Tag  : 시스템 Tag 및 사용자 Tag를 표기 하며, 시스템 Tag는 다음과 같습니다.
++ Name : 서비스명
++ Type  : 서비스 종류
++ Tag  : 시스템 Tag 및 사용자 Tag를 표기 하며, Default 시스템 Tag는 다음과 같습니다.
 
 <!-- 표 -->
   |         구분        | 설명   |  
@@ -34,14 +35,14 @@
   |         구분        | 설명   |  
   |:---: | :--- |  
   | Running                   | 정상  |  
-  | Initializing                   | 서비스 생성 초기화중. |
+  | Initializing                   | 서비스 생성 초기화 중 |
   | StorageInitializing                    | 스토리지 생성 중   |  
   | PodInitializing                     | Pod 생성 중   |  
   | Terminating                       | 종료중   |
   | ShutDown                      | 종료   |  
   | Failed                      | 서비스 생성 실패   |
-  | Warning                       | 경고 ( ha 의 경우 slave 가 shutdown 인경우, pod 가 running 상태가 아닌 pod 가 포함된 경우   |
-  | NotReady                        | 서비스 생성중 statefulset or deployment 가 생성이 완료되지 않은 경우  |
+  | Warning                       | 경고 
+  | NotReady                        | 서비스 생성중 |
   | 기타                        | Failed, Not, BackOff, Err, Unhealthy, Unschedulable   |
   
   + Namespace : 현재 서비스의 네임스페이스를 표기 합니다.
@@ -52,9 +53,16 @@
        - 알람
        - 환경설정 변경
 ## 2. Resource
-서비스의 POD에 대한 Resource 사용을 표기 합니다. 
+서비스를 제공하는 POD 의 리소스에 대한 현황을 확인 할 수 있습니다.
+(확장아이콘) 추가적인 정보를제공 합니다.
++ Storage   : 저장소에 대한 정보
++ Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
++ Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
 ### 2.1 Resource 화면 구성
 + Status  : 정상, 비정상을 나타냅니다.
+    - (초록색아이콘) : 정상
+    - (노란색아이콘) : 서비스 정상, 이슈 발생
+    - (빨간색아이콘) : 장애 발생
 + Name : POD명을 나타냅니다.
 + Role : HA 구성은 Primary와 Secondary Role로 구성됩니다. 
 + CPU(m) : CPU 사용률을 나타냅니다.
