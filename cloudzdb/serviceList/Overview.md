@@ -85,13 +85,13 @@
 
       가장 최근에 시작된 이후로 얼마의 시간이 지났는지 알 수 있습니다.
 + Actions : 각 POD들에 대한 Resource를 수정하거나 재기동 할 수 있으며, 모니터링을 할수 있습니다.
-    - 모니터링
+    - ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/monitor%20icon.png)
         * 모니터링 : 30분, 1시간, 3시간, 6시간, 12시간 단위로 CPU Usage, Memory Usage, Storage Usage 를 확인 할 수 있습니다.
         * Event : 서비스를 제공하는 리소스에 이벤트 발생시 내용을 확인 할 수 있습니다.
         * Object Info  : 서비스를 제공하는 Kubernetes Resource 에 대한 정보를 확인 할 수 있습니다.
             + Kind : Kubernetes Resource 의 종류로 포함되는 Resource 
             
-    - 목록 보기  
+    - ![](https://github.com/cnpst/zdb-help-description/blob/main/resources/images/list%20icon.png)  
          * Scale Up/Down : CPU 와 메모리를 변경 할 수 있습니다.
          * Storage Scale Up : Storage Type 에 따라 사이즈나 IOPS 를 변경 할 수 있습니다.
                                  사이즈는 증가만 가능하며 축소 할 수 없습니다.
