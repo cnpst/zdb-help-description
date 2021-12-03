@@ -63,17 +63,25 @@
     - (초록색아이콘) : 정상
     - (노란색아이콘) : 서비스 정상, 이슈 발생
     - (빨간색아이콘) : 장애 발생
-+ Name : POD명을 나타냅니다.
-+ Role : HA 구성은 Primary와 Secondary Role로 구성됩니다. 
-+ CPU(m) : CPU 사용률을 나타냅니다.
-+ Memory(M) : Memory 사용률을 나타냅니다.
-+ Storage(GB) : Storage 사용률을 나타냅니다.
-+ Uptime  : POD가 기동된 시간을 나타냅니다
++ Name : 리소스 이름
++ Role : 리소스 역할
++ CPU(m) : 1000m 이 1 Core 를 뜻합니다.  
+CPU 사용량이 과도하게 높으면 서비스에 지연이 발생 할 수 있습니다.
+과도하게 높은 CPU 사용량이 지속 될 경우 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
++ Memory(M) : Memory 사용률을 나타냅니다.  
+Memory 사용량이 100% 가 되면 서비스 장애가 발생합니다. 
+과도하게 높은 Memory 사용률은 서비스 DOWN 의 위험성에 대한 정보로 인식해야 하며 리소스 증설이나 DB, AP 성능 최적화를 고려 해야 합니다. 
++ Storage(GB) : GB 는 기가바이트를 뜻합니다.
+Storage 사용량이 100% 가 되면 서비스 장애가 발생 합니다.
+Storage 사용량 모니터링을 통해 여유 있는 공간을 항상 확보 해야 합니다.
++ Uptime  : 리소스 가동 시간
+가장 최근에 시작된 이후로 얼마의 시간이 지났는지 알 수 있습니다.
 + Actions : 각 POD들에 대한 Resource를 수정하거나 재기동 할 수 있으며, 모니터링을 할수 있습니다.
     - 모니터링
-        * 모니터링
-        * Event
-        * Object Info  
+        * 모니터링 : 30분, 1시간, 3시간, 6시간, 12시간 단위로 CPU Usage, Memory Usage, Storage Usage 를 확인 할 수 있습니다.
+        * Event : 서비스를 제공하는 리소스에 이벤트 발생시 내용을 확인 할 수 있습니다.
+        * Object Info  : 서비스를 제공하는 Kubernetes Resource 에 대한 정보를 확인 할 수 있습니다.
+            + Kind : Kubernetes Resource 의 종류
     - 목록 보기  
          * Scale Up/Down 
          * Storage Scale Up
