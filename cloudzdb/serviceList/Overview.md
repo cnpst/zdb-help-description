@@ -21,7 +21,7 @@
   - backup : backup 기능 사용
   - failover : failover 기능 사용
   - public : public endpoint 사용
-+ Health : 현재 서비스 상태 정보를 표기 하며, 상태 정보는 다음과 같습니다. (내용 공유 받을 예정임...)
++ Health : 현재 서비스 상태 정보를 표기 하며, 상태 정보는 다음과 같습니다.  
   - Running : 정상
   - Initializing : 서비스 생성 초기화 중
   - StorageInitializing : 스토리지 생성 중
@@ -48,7 +48,7 @@
   - Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
 
 ### Resource 구성 정보
-+ Status  : 정상, 비정상을 나타냅니다.  (내용 공유 받아 확인 필요...)
++ Status  : 정상, 비정상을 나타냅니다.  
     - __[ Running ]__ : 정상
     - __[ Warning ]__ : 서비스 정상, 이슈 발생
     - __[ Critical ]__ : 장애 발생
