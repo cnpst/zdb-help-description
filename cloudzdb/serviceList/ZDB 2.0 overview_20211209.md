@@ -89,11 +89,12 @@
 + Admin Account : 서비스 관리자 계정 이름
 + Admin Password : 서비스 관리자 비밀번호
 + Port : 서비스 접속 Port 번호
-+ Cluster : 동일 클러스터에 deploy 되어 있는 Pod 에서만 접속을 허용하는 Endpoint로 모든 서비스는 Cluster 가 존재합니다.
-    - Private Network (Private Load Balancer) : 동일 Cloud Service Provider의 동일 VLAN/VPC 또는 Spanning 된 Virtual Network 환경에서 접속 가능한 Endpoint         
-          ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
-    - Public Network (Public Load Balancer) : 인터넷 접점(Public)에 있는 Portable IP를 부여하여 어디에서나 접속할 수 있는 Endpoint  
-          ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
++ Cluster (Cluster IP) : 동일 클러스터에 deploy 되어 있는 Pod 에서만 접속을 허용하는 Endpoint  
+모든 서비스는 Cluster IP 가 존재합니다.
++ Private Network (Private Load Balancer) : 동일 Cloud Service Provider의 동일 VLAN/VPC 또는 Spanning 된 Virtual Network 환경에서 접속 가능한 Endpoint
++ Public Network (Public Load Balancer) : 인터넷 접점(Public)에 있는 Portable IP를 부여하여 어디에서나 접속할 수 있는 Endpoint
+
+      ON 이나 OFF 상태의 버튼 클릭 후 service name 입력을 하면 해당 기능을 ON, OFF 할 수 있습니다.
 + Connection String : jdbc 를 이용한 연결 명령어 예시
 + Command Line :  client tool 을 이용한 연결 명령어 예시
 
