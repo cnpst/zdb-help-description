@@ -114,7 +114,7 @@
 
       SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.  
       이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
-+ <code>[ Actions ]</code> : 추가  제공 합니다.
++ <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
     - Show Log : POD 의 로그를 확인 할 수 있습니다.
     - Failover : Failover 를 수행 시킬 수 있습니다.
     - Restart : POD 를 재기동 할 수 있습니다.
