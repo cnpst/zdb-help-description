@@ -1,23 +1,22 @@
 # Overview
 ## Service
-전체적인 서비스의 상태와 구성을 확인 할 수 있습니다.
-
-### 서비스 Actions  
-+ Overview : 전체적인 상태를 표현  
-+ Monitoring : 서비스에 대한 모니터링 기능  
-+ Logs : 로그 확인 기능  
-+ Tags : 태그 기능  
-+ Events : 서비스에 대한 이벤트 정보 확인  
-+ Backup : 서비스에 백업 기능  
-+ Configuration : 환경 설정 관리 기능  
-+ Shutdown : 서비스 종료 기능  
-+ Restart : 서비스를 재시작 기능  
-+ Delete : 서비스 삭제 기능  
+전체적인 서비스의 상태와 구성을 확인 할 수 있습니다.  
++ <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
+  - Overview : 전체적인 상태를 표현  
+  - Monitoring : 서비스에 대한 모니터링 기능  
+  - Logs : 로그 확인 기능  
+  - Tags : 태그 기능  
+  - Events : 서비스에 대한 이벤트 정보 확인  
+  - Backup : 서비스에 백업 기능  
+  - Configuration : 환경 설정 관리 기능  
+  - Shutdown : 서비스 종료 기능  
+  - Restart : 서비스를 재시작 기능  
+  - Delete : 서비스 삭제 기능  
 
 ### 서비스 구성 정보
 + Name : 서비스명
 + Type : 서비스 종류
-+ Tag : 시스템 Tag 및 사용자 Tag를 표기 하며, Default 시스템 Tag는 다음과 같습니다.
++ Tag : 시스템 및 사용자 Tag를 표기 하며, Default 시스템 Tag는 다음과 같습니다.
   - ha : HA 구조
   - backup : backup 기능 사용
   - failover : failover 기능 사용
@@ -43,10 +42,10 @@
 
 ## Resource
 서비스를 제공하는 POD 의 리소스에 대한 현황을 확인 할 수 있습니다.    
-<code>[ Expand ]</code> : 추가적인 정보를제공 합니다.
-+ Storage   : 저장소에 대한 정보
-+ Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
-+ Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
++ <code>[ Expand ]</code> : 추가 정보를 제공 합니다.
+  - Storage   : 저장소에 대한 정보
+  - Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
+  - Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
 
 ### Resource 구성 정보
 + Status  : 정상, 비정상을 나타냅니다.
@@ -70,7 +69,7 @@
 + Uptime  : 리소스 가동 시간을 나타냅니다.
 
       가장 최근에 시작된 이후로 얼마의 시간이 지났는지 알 수 있습니다.
-+ <code>[ Actions ]</code> : 각 POD들에 대한 Resource를 재기동하거나, 모니터링을 할수 있습니다.
++ <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
   - Scale Up/Down : CPU 와 메모리를 변경 할 수 있습니다.
   - Show Log : 서비스를 제공하는 POD 의 로그를 확인 할 수 있습니다.  
     　　　　　이벤트 발생에 대한 내용을 로그를 통해 확인 할 수 있습니다. 
@@ -81,8 +80,9 @@
  
 ## Connection Info
 데이터베이스 접속 정보에 대해 확인 할 수 있습니다.  
-+ <code>[ Expand ]</code> : Connections, Network I/O 그래프를 확인 할 수 있습니다.
-+ <code>[ Actions ]</code> : 추가 기능
++ <code>[ Expand ]</code> : : 추가 정보를 제공 합니다. 
+  - Connections, Network I/O 그래프를 확인 할 수 있습니다.
++ <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
   -  Object Info : 모니터아이콘 눌렀을때 제공하는 Object Info 와 동일
 
 ### Connection Info 구성 정보
@@ -99,19 +99,21 @@
 
 ## Topology
 서비스를 제공하는 POD 들의  구성을 확인 할 수 있습니다.  
-+ <code>[ Expand ]</code> : [[그냥 펼치기만 하고 추가 기능이 없음]]
-+ <code>[ Actions ]</code> : 추가 기능
++ <code>[ Expand ]</code> : 추가 정보를 제공 합니다.
++ <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
   - Refresh : 구성 정보를 갱신하여 확인 할 수 있습니다.
 
 ### Topology 구성 정보
 + Replications : HA 구성 환경에 대한 정보
 + PRIMARY : HA 환경에서 primary Role 을 가진 POD 정보  
-      PRIMARY 는 장애가 발생 했을 경우 SECONDARY 로 FAILOVER 될 수 있습니다.              
+
+      PRIMARY 는 장애가 발생 했을 경우 SECONDARY 로 FAILOVER 될 수 있습니다.  
       이와 같이 pod 의 이름이 primary 이더라도 HA 환경에서 PRIMARY 나 SECONDARY 역할을 수행 할 수 있습니다.
-+ Replications : SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보          
-      SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.          
++ Replications : SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보  
+
+      SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.  
       이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
-+ <code>[ Actions ]</code> : 추가 기능
++ <code>[ Actions ]</code> : 추가  제공 합니다.
     - Show Log : POD 의 로그를 확인 할 수 있습니다.
     - Failover : Failover 를 수행 시킬 수 있습니다.
     - Restart : POD 를 재기동 할 수 있습니다.
