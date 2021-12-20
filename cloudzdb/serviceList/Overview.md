@@ -34,7 +34,12 @@
   - Failed : 서비스 생성 실패
   - Warning : 경고
   - NotReady : 서비스 생성중
-  - 기타 : Failed, Not, BackOff, Err, Unhealthy, Unschedulable
+  - 기타 : Failed, Not, BackOff, Err, Unhealthy, Unschedulable  
+    ```
+    Running 상태가 아닐 경우 [ More ] 버튼을 클릭하여 내용을 확인 할 수 있습니다.
+    Logs 기능을 이용하여 서비스를 제공하는 POD 의 로그를 확인 할 수 있습니다.
+    Monitoring 기능을 이용하여 리소스와 서비스 정보를 확인 할 수 있습니다.
+    ```
 + Namespace : 현재 서비스의 네임스페이스를 표기 합니다.
 + __[ More ]__ : 정상메세지 이외의 INfo, Waring, Error정보들 표현합니다.
   - 서비스 및 스토리지 생성/삭제/수정/재시작
@@ -56,7 +61,13 @@
 + Status  : 리소스의 상태를 나타냅니다.
     - <code>[ Running ]</code> : 정상
     - <code>[ Warning ]</code> : 서비스 정상, 이슈 발생
+      ```
+      서비스가 정상 제공되고 있더라도 발생한 문제는 해결 해야 합니다.
+      ```
     - <code>[ Critical ]</code> : 장애 발생
+      ```
+      서비스가 정상 제공 되고 있지 않으므로 즉시 이슈를 확인하고 해결 해야 합니다.
+      ```
 + Name : 리소스 이름
 + Role : 리소스 역할
 + CPU : CPU 사용률을 나타냅니다. (단위 1000m = 1 Core)
