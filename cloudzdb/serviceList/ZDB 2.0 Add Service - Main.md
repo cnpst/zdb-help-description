@@ -21,5 +21,5 @@
   - Standalone : 1개 서버만을 이용해 서비스를 제공합니다.  
   - Multi Broker : 2개 이상의 서버를 이용해 서비스를 제공합니다.  
 ```
-High Availability, Multi Broker 는 고가용성 구성으로 운영 서비스에 적합 합니다.
+High Availability, Cluster, Multi Broker 는 고가용성 구성으로 운영 서비스에 적합 합니다.
 ```
