@@ -8,8 +8,10 @@
   5초 주기 5회 동안 Master POD 가 장애 상태로 인지 될 경우 Slave 가 Master 역할을 수행하게 됩니다.
   최초 설정 변경시 서비스가 재시작 됩니다.
   ```
-+ Enable Audit : 
-  
++ Enable Audit : Audit 활성화 여부를 설정 할 수 있습니다.
+  ```
+  추후 지원 예정
+  ```
 + Advanced
   - Use Default Configuration : 기본 값을 사용하여 구성하게 됩니다. 서비스 생성 이후에도 설정 값은 변경할 수 있습니다.
     ```
