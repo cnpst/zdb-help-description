@@ -12,6 +12,6 @@
     ```
 + Service Topology
   - Primary : 조회 및 변경 업무를 모두 수행 할 수 있는 서비스 입니다.
-  - Secondary : 조회 업무를 수행 할 수 있는 서비스 입니다.
+  - Secondary : 고가용성 구성으로 Primary 장애시 대응 할 수 있는 서비스 입니다. 또한 조회 업무를 수행 할 수 있습니다.
   - Service Version : 지원하는 서비스 버전 리스트를 선택 할 수 있습니다. 
   
