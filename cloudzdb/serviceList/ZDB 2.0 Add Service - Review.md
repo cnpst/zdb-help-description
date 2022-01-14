@@ -11,8 +11,8 @@
 + Data Storage : 저장소 구성 정보
   - Storage Auto Scale-up : 자동 Scale-up 사용 여부를 확인 할 수 있습니다.
 + Network & Security : 서비스 Endpoint 구성 정보
-  - Use TLS : 
-  - Use Network Policy : 
+  - Use TLS : TLS(Transport Layer Security) 프로토콜을 사용하여 데이터를 암호화합니다 (미구현)
+  - Use Network Policy : 쿠버네티스 네트워크폴리시(NetworkPolicy) 사용 합니다.
   - Port : 설정한 서비스 포트 번호를 확인 할 수 있습니다.
 + Backup : 백업 구성 정보
   - Use Schedule Backup : 스케줄 백업 사용 여부를 확인 할 수 있습니다.
