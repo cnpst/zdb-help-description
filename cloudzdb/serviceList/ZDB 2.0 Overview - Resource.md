@@ -3,7 +3,6 @@
 + <code>[ Expand ]</code> : 추가 정보를 제공 합니다.
   - Storage : 저장소에 대한 정보
   - Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
-  - Object : 백업 파일이 저장되는 저장소에 존재하는 파일 리스트
 
 ### Resource 구성 정보
 + Status  : 리소스의 상태를 나타냅니다.
