@@ -94,7 +94,54 @@
   - Startup : 서비스를 시작 합니다.
 
 ───────────────────────────────────────────────────────
+### Storage 특성
++ Data Storage : 서비스 추가 시 Instance 별로 생성되며 필수 선택 사항입니다.
+  - Name : "data-" 접두어 + 인스턴스명
+  - Storage Class : ebs-gp3-zdb 
+  - 기본 80% 사용량 초과 시 알람이 작동 합니다.
+  - 백업 기능을 이용할 경우 백업스토리지가 없으면 사용률 40% 초과 시 백업이 작동하지 않습니다.
+  ```
+  각 데이터베이스의 data 스토리지 경로는다음과 같습니다.
+  Mariadb : /bitnami/mariadb/
+  PostgreSQL : /bitnami/postgresql/
+  MongoDB : /bitnami/mongodb/
+  ```
+  ```
+  Mariadb에서 tmpdir 파라메터를 Data Storage 경로로(/bitnami/mariadb/tmp) 사용할 경우 비효율적인 쿼리로 인해 tmp 사용량이 증가할경우 Data Storage 사용에 제약(DISK FULL) 이 발생할 수 있습니다. 
+  또한 tmpdir을 Data Storage가 아닌 노드 영역을(/opt/bitnami/mariadb/tmp) 사용할 경우 구성된 노드의 EC2 인스턴스의 EBS 대역폭(Gbps)으로 I/O가 발생 합니다.
+  일반적으로 tmpdir은 Data Storage 경로 사용하는 것이 성능에는 유리 합니다.
+  ```
+  EC2 대역폭에 대한 자세한 내용은 아래 AWS 메뉴얼을 참고하시기 바랍니다 
+  https://aws.amazon.com/ko/ec2/instance-types/
++ Backup Storage : 백업을 위해 서비스 추가 시 또는 추가 버튼을 통해 생성 가능하며, 옵션 선택 사항입니다.
+  - Name : "backup-" 접두어 + 인스턴스명
+  - Storage Class : efs-zdb 
+  - 기본 80% 사용량 초과 시 알람이 작동 합니다.
+  - 백업 기능을 이용할 경우 백업스토리지가 존재시 사용률 80% 초과 시 백업이 작동하지 않습니다.
+  ```
+  각 데이터베이스의 data 스토리지 경로는다음과 같습니다.
+  Mariadb : /backup/
+  PostgreSQL : /backup/
+  MongoDB : /backup/
+  ```
+  + Object Storage : 서비스를 생성할 경우 백업파일 업로드를 위해 AWS S3에 버킷이 생성됩니다.
+  - S3에는 DB 백업 파일, 백업 Log,  resource 변경에 대한 구성정보등이 백업 되어 저장됩니다.
+  - 각 파일에 대한 보관주기 정책은 다음과 같습니다.  
 
+  |백업분류|주기|압축유무|설명|
+  |:------:|:---:|:---:|:---:|
+  |Full Backup|백업 스케쥴 보관주기|압축|전체 백업 파일|
+  |Incremental Backup|백업 스케쥴 보관주기|압축|증분 백업 파일|
+  |Binlog Backup|백업 스케쥴 보관주기|압축X|Mariadb 시점 복원을 위한 Binlog 백업 파일|
+  |Archivelog Backup|백업 스케쥴 보관주기|압축X|PostgreSQL 시점 복원을 위한 Archivelog 백업 |
+  |Full Backup Log|40일|압축X|전체 백업 정보가 저장된 Logfile|
+  |Incremental Backup Log|40일|압축X|증분 백업 정보가 저장된 Logfile|
+  |Binlog Backup Log|백업 스케쥴 보관주기|압축X|Mariadb Binlog 백업 정보가 저장된 Logfile|
+  |Archivelog Backup Log|백업 스케쥴 보관주기|압축X|PostgreSQL Archivelog 백업 정보가 저장된 Logfile|
+
+
+  S3에 대한 자세한 내용은 아래 AWS 메뉴얼을 참고하시기 바랍니다.
+  https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html
 ### Storage 구성 정보
 서비스를 제공하는 POD 의 저장소에 대한 현황을 확인 할 수 있습니다.    
 + <code>[ Action ]</code> : 추가 기능을 제공 합니다.
@@ -102,12 +149,25 @@
   - Secondary Scale Up : Secondary Role 을 가진 POD Scale Up 기능
   - Add Backup Storage : 백업 스토리지 추가
 + Name : 저장소의 이름
+  ```
+  AWS Volume 연결을 위해 사용 되는 쿠버네티스의 퍼시스턴트볼륨클레임(PVC)명을 나타냅니다.
+  ```
 + Status : 저장소의 상태
+  ```
+  PVC의 상태 정보를 나타냅니다.
+  ```
 + Volume : POD 에 종속되는 디스크 이름
-+ Storage Class : 저장소 종류
+  ```
+  PVC에 대한 퍼시스턴트볼륨(PV)명을 나타냅니다. PV는 관리자가 프로비저닝하거나 스토리지 클래스를 사용하여 동적으로 프로비저닝한 클러스터의 스토리지입니다
+  ```
++	Zone : 스토리지 볼륨이 위치한 가용영역
+  ```
+  스토리지 볼륨의 가용영역은 연결된 Instance의 Zone과 동일해야 합니다.
+  ```
++ Storage Class : 사용중인 Storage 유형을 나타냅니다. Storage Class명은 Cluster 환경에 따라 변경될 수 있습니다.
   ```
   efs-zdb : Amazone Elastic File System 으로 파일을 추가하고 제거할 때 자동으로 확장되고 축소되며 관리 또는 프로비저닝이 필요하지 않습니다.
-  ebs-gp2 : Amazone Elastic Block Store 으로 사용이 쉽고 확장 가능한 고성능 블록 스토리지 입니다.
+  ebs-gp3-zdb  : EBS 볼륨 유형중 하나로 고객이 블록 스토리지 용량을 추가로 프로비저닝할 필요 없이 IOPS와 처리량을 독립적으로 늘릴 수 있게 해줍니다. Default 3000 IOPS를 제공합니다
   ```
 + IOPS/GiB : GiB 마다 초당 I/O 작업 수
 + Size(GiB) : 저장소 사이즈
