@@ -124,7 +124,7 @@
   PostgreSQL : /backup/
   MongoDB : /backup/
   ```
-  + Object Storage : 서비스를 생성할 경우 백업파일 업로드를 위해 AWS S3에 버킷이 생성됩니다.
++ Object Storage : 서비스를 생성할 경우 백업파일 업로드를 위해 AWS S3에 버킷이 생성됩니다.
   - S3에는 DB 백업 파일, 백업 Log,  resource 변경에 대한 구성정보등이 백업 되어 저장됩니다.
   - 각 파일에 대한 보관주기 정책은 다음과 같습니다.  
 
@@ -134,10 +134,19 @@
   |Incremental Backup|백업 스케쥴 보관주기|압축|증분 백업 파일|
   |Binlog Backup|백업 스케쥴 보관주기|압축X|Mariadb 시점 복원을 위한 Binlog 백업 파일|
   |Archivelog Backup|백업 스케쥴 보관주기|압축X|PostgreSQL 시점 복원을 위한 Archivelog 백업 |
+  |Ondemand Full Backup|보관주기 없음|압축|사용자에 의한 Full 백업 파일|
   |Full Backup Log|40일|압축X|전체 백업 정보가 저장된 Logfile|
   |Incremental Backup Log|40일|압축X|증분 백업 정보가 저장된 Logfile|
   |Binlog Backup Log|백업 스케쥴 보관주기|압축X|Mariadb Binlog 백업 정보가 저장된 Logfile|
   |Archivelog Backup Log|백업 스케쥴 보관주기|압축X|PostgreSQL Archivelog 백업 정보가 저장된 Logfile|
+  |Ondemand Full Backup Log|보관주기 없음|압축X|사용자 Full 백업 정보가 저장된 Logfile|
+  |Ondemand Snapshot Backup Log|보관주기 없음|압축X|사용자 Snapshot 백업 정보가 저장된 Logfile|
+  
+  ```
+  Ondemand 백업은 자동삭제 되지 않으며, 백업 페이지에서 사용자가 삭제 할 수 있습니다.
+  ```
+  
+  
 
 
   S3에 대한 자세한 내용은 아래 AWS 메뉴얼을 참고하시기 바랍니다.
