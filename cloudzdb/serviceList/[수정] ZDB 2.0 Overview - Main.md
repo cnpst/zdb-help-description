@@ -1,5 +1,5 @@
 ## &#9724; Service 
-전체적인 서비스의 상태와 구성을 확인 할 수 있습니다.  
+해당 서비스가 위치한 Namespace, 설정한 Tag, DB 서비스 Version 정보 등 전반적인 정보를 확인할 수 있습니다..  
 + <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
   - Overview : 전체적인 상태를 표현  
   - Monitoring : 서비스에 대한 모니터링 기능  
