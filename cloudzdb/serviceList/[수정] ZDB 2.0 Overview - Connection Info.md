@@ -1,5 +1,6 @@
 ## &#9724; Connection Info
-데이터베이스 접속 정보에 대해 확인 할 수 있습니다.  
+Provisioning 된 데이터 서비스 인스턴스에 Access 하기 위한 Endpoint 정보를 제공하며, 기본적으로 Cluster 내부의 Application에서만 접근하도록 허용하며, 네트워크 구성 및 클러스터 상태에 따라 Private/Public Load Balancer를 통해 Cluster 외부에서 Access를 지원합니다. 데이터 서비스 관리를 위한 admin 계정이 있는경우 계정 정보를 보여주고 변경하는 기능을 제공하며, HA(High Available) 구성이 된 데이터 서비스의 경우에는 Auto Failover를 설정하는 기능을 제공합니다.
+
 + <code>[ Expand ]</code> : 추가 정보를 제공 합니다. 
   - Connections, Network I/O 그래프를 확인 할 수 있습니다.
 + <code>[ Actions ]</code> : 추가 기능을 제공 합니다.
