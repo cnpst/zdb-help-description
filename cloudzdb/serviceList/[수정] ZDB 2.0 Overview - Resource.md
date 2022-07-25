@@ -1,5 +1,5 @@
 ## &#9724; Resource
-서비스를 제공하는 Instance 의 리소스에 대한 현황을 확인 할 수 있습니다.    
+데이터 서비스 인스턴스를 구성하는 Pod(Container)의 목록과 상태 정보를 제공하며, 리소스의 Scale Up/Down(CPU/Memory), In/Out(Member or Replicas) 기능을 제공합니다. 데이터 서비스 인스턴스를 구성하는 Pod(Container)에 마운트되는 스토리지의 정보와 상태를 제공하며, 스토리지의 추가 및 Scale-Up(Size, QoS, Throughput) 기능을 제공합니다.
 + <code>[ Expand ]</code> : 추가 정보를 제공 합니다.
   - Storage : 저장소에 대한 정보
   - Ojbect Storage : 백업 파일이 저장되는 저장소에 대한 정보
