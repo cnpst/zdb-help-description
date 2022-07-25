@@ -192,10 +192,12 @@
   https://docs.aws.amazon.com/ko_kr/efs/latest/ug/performance.html
 
 ### Object Storage 구성 정보
-+ Name : Object Storage 이름
-+ Created Time : Object Storage 생성 일시
++ Name : Object Storage(S3) 버킷명을 나타냅니다.
 + Used Size : 총 사용량 (단위 Mi : 메가바이트)
-+ Full Backup : Full Backup 파일이 사용한 사이즈
-+ Incremental Backup : Incremental Backup 파일이 사용한 사이즈
-+ Binlog Backup : Binlog Backup 파일이 사용한 사이즈
-+ Etc Size : 기타 로그 파일이 사용한 사이즈
++ Full Backup : Full Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Incremental Backup : Incremental Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Binlog Backup : Binlog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Archivelog Backup : Archivelog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ OnDemand Size : OnDemand Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Etc Size : 기타 로그 파일이 사용한 사이즈를 나타냅니다.
+
