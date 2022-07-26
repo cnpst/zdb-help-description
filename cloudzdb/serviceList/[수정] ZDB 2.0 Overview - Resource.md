@@ -94,7 +94,61 @@
   - Startup : 서비스를 시작 합니다.
 
 ───────────────────────────────────────────────────────
-### Storage 특성
+
+### Storage 구성 정보
+서비스를 제공하는 POD 의 저장소에 대한 현황을 확인 할 수 있습니다.    
++ <code>[ Action ]</code> : 추가 기능을 제공 합니다.
+  - Primary Scale Up : Primary Role 을 가진 POD Scale Up 기능
+  - Secondary Scale Up : Secondary Role 을 가진 POD Scale Up 기능
+  - Add Backup Storage : 백업 스토리지 추가
++ Name : 저장소의 이름
+  ```
+  AWS Volume 연결을 위해 사용 되는 쿠버네티스의 퍼시스턴트볼륨클레임(PVC)명을 나타냅니다.
+  ```
++ Status : 저장소의 상태
+  ```
+  PVC의 상태 정보를 나타냅니다.
+  ```
++ Volume : POD 에 종속되는 디스크 이름
+  ```
+  PVC에 대한 퍼시스턴트볼륨(PV)명을 나타냅니다. PV는 관리자가 프로비저닝하거나 스토리지 클래스를 사용하여 동적으로 프로비저닝한 클러스터의 스토리지입니다
+  ```
++	Zone : 스토리지 볼륨이 위치한 가용영역
+  ```
+  스토리지 볼륨의 가용영역은 연결된 Instance의 Zone과 동일해야 합니다.
+  ```
++ Storage Class : 사용중인 Storage 유형을 나타냅니다. Storage Class명은 Cluster 환경에 따라 변경될 수 있습니다.
+  ```
+  efs-zdb : Amazone Elastic File System 으로 파일을 추가하고 제거할 때 자동으로 확장되고 축소되며 관리 또는 프로비저닝이 필요하지 않습니다.
+  ebs-gp3-zdb  : EBS 볼륨 유형중 하나로 고객이 블록 스토리지 용량을 추가로 프로비저닝할 필요 없이 IOPS와 처리량을 독립적으로 늘릴 수 있게 해줍니다. Default 3000 IOPS를 제공합니다
+  ```
++ IOPS/GiB : GiB 마다 초당 I/O 작업 수
++ Size(GiB) : 저장소 사이즈
++ Age : 저장소가 생성된 이후 지난 시간
++ Actions : 추가 기능을 제공 합니다.
+  - Monitoring : Storage 사용량에 대한 그래프를 확인 할 수 있습니다.
+  - Object Info : Kubernetes Resource 의 yaml 내용과 설명을 확인 할 수 있습니다.
+  - Change Setting : IOPS 및 Throughput을 변경 할 수 있습니다.
+  ```
+  efs-zdb Storage Class을 사용하는 Backup Storage는 IOPS 및 Throughput에 대해 변경 할 수 없습니다.
+  ```
+  EFS의 자세한 사항은 아래 메뉴얼을 참고 하시기 바랍니다.  
+  https://docs.aws.amazon.com/ko_kr/efs/latest/ug/performance.html
+
+### Object Storage 구성 정보
++ Name : Object Storage(S3) 버킷명을 나타냅니다.
++ Used Size : 총 사용량 (단위 Mi : 메가바이트)
++ Full Backup : Full Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Incremental Backup : Incremental Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Binlog Backup : Binlog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Archivelog Backup : Archivelog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ OnDemand Size : OnDemand Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
++ Etc Size : 기타 로그 파일이 사용한 사이즈를 나타냅니다.
+
+
+───────────────────────────────────────────────────────
+
+### Tip. Storage 특성
 + Data Storage : 서비스 추가 시 Instance 별로 생성되며 필수 선택 사항입니다.
   - Name : "data-" 접두어 + 인스턴스명
   - Storage Class : ebs-gp3-zdb 
@@ -151,53 +205,4 @@
 
   S3에 대한 자세한 내용은 아래 AWS 메뉴얼을 참고하시기 바랍니다.
   https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html
-### Storage 구성 정보
-서비스를 제공하는 POD 의 저장소에 대한 현황을 확인 할 수 있습니다.    
-+ <code>[ Action ]</code> : 추가 기능을 제공 합니다.
-  - Primary Scale Up : Primary Role 을 가진 POD Scale Up 기능
-  - Secondary Scale Up : Secondary Role 을 가진 POD Scale Up 기능
-  - Add Backup Storage : 백업 스토리지 추가
-+ Name : 저장소의 이름
-  ```
-  AWS Volume 연결을 위해 사용 되는 쿠버네티스의 퍼시스턴트볼륨클레임(PVC)명을 나타냅니다.
-  ```
-+ Status : 저장소의 상태
-  ```
-  PVC의 상태 정보를 나타냅니다.
-  ```
-+ Volume : POD 에 종속되는 디스크 이름
-  ```
-  PVC에 대한 퍼시스턴트볼륨(PV)명을 나타냅니다. PV는 관리자가 프로비저닝하거나 스토리지 클래스를 사용하여 동적으로 프로비저닝한 클러스터의 스토리지입니다
-  ```
-+	Zone : 스토리지 볼륨이 위치한 가용영역
-  ```
-  스토리지 볼륨의 가용영역은 연결된 Instance의 Zone과 동일해야 합니다.
-  ```
-+ Storage Class : 사용중인 Storage 유형을 나타냅니다. Storage Class명은 Cluster 환경에 따라 변경될 수 있습니다.
-  ```
-  efs-zdb : Amazone Elastic File System 으로 파일을 추가하고 제거할 때 자동으로 확장되고 축소되며 관리 또는 프로비저닝이 필요하지 않습니다.
-  ebs-gp3-zdb  : EBS 볼륨 유형중 하나로 고객이 블록 스토리지 용량을 추가로 프로비저닝할 필요 없이 IOPS와 처리량을 독립적으로 늘릴 수 있게 해줍니다. Default 3000 IOPS를 제공합니다
-  ```
-+ IOPS/GiB : GiB 마다 초당 I/O 작업 수
-+ Size(GiB) : 저장소 사이즈
-+ Age : 저장소가 생성된 이후 지난 시간
-+ Actions : 추가 기능을 제공 합니다.
-  - Monitoring : Storage 사용량에 대한 그래프를 확인 할 수 있습니다.
-  - Object Info : Kubernetes Resource 의 yaml 내용과 설명을 확인 할 수 있습니다.
-  - Change Setting : IOPS 및 Throughput을 변경 할 수 있습니다.
-  ```
-  efs-zdb Storage Class을 사용하는 Backup Storage는 IOPS 및 Throughput에 대해 변경 할 수 없습니다.
-  ```
-  EFS의 자세한 사항은 아래 메뉴얼을 참고 하시기 바랍니다.  
-  https://docs.aws.amazon.com/ko_kr/efs/latest/ug/performance.html
-
-### Object Storage 구성 정보
-+ Name : Object Storage(S3) 버킷명을 나타냅니다.
-+ Used Size : 총 사용량 (단위 Mi : 메가바이트)
-+ Full Backup : Full Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
-+ Incremental Backup : Incremental Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
-+ Binlog Backup : Binlog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
-+ Archivelog Backup : Archivelog Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
-+ OnDemand Size : OnDemand Backup 파일이 사용한 사이즈 및 개수를 나타냅니다.
-+ Etc Size : 기타 로그 파일이 사용한 사이즈를 나타냅니다.
 
