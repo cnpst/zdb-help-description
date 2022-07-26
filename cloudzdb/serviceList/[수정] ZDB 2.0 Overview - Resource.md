@@ -134,6 +134,8 @@
   ```
   EFS의 자세한 사항은 아래 메뉴얼을 참고 하시기 바랍니다.  
   https://docs.aws.amazon.com/ko_kr/efs/latest/ug/performance.html
+  
+───────────────────────────────────────────────────────
 
 ### Object Storage 구성 정보
 + Name : Object Storage(S3) 버킷명을 나타냅니다.
