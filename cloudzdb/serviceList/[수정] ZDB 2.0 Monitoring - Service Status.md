@@ -5,7 +5,7 @@
   - Service Status : DB 서비스의 상태가 표시 됩니다.
     - Name : 서비스의 Pod명
     - Roles :  서비스 역할
-    - DB : DB 상태를 정의 합니다.
+    - DB Status : DB 상태를 정의 합니다.
       -	Running : 서비스 정상 
       -	Stop : 서비스 Stop (확인필요)
     - Replication Status : Replication 상태를 나타냅니다.
@@ -43,15 +43,15 @@
       - Delay : 복제 지연(1800s 이상)
       - Error : 복제 오류
     -	Lags(s) : Replication Delay 시간
-    -	<code>[ Action ]</code> : 추가 정보를 제공 합니다. 
-      - Connection Status : (준비중)
+    - <code>[ Action ]</code> : 추가 정보를 제공 합니다. 
+      - Replication Status : (준비중)
       
   - Lock Status : DB Lock 상태가 표시 됩니다.
     - Name : 서비스의 Pod명
     - Row Lock Count : Row Lock으로 Waiting하는 Session의 개수
     - Metadata Lock Count : Metadata Lock으로 Waiting하는 Session의 개수
     - Lock Duration Time(s) :  Lock으로 Waiting하는 Session중 가장 오랫동안 대기하는 세션의 시간
-    -	<code>[ Action ]</code> : 추가 정보를 제공 합니다. 
+    - <code>[ Action ]</code> : 추가 정보를 제공 합니다.
       - Row Lock Status : DML에 의한 Lock 정보를 확인 할 수 있습니다.
       - Metadata Lock Status : DDL에 의한 Lock 정보를 확인 할 수 있습니다.
       ```
