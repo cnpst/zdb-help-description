@@ -67,13 +67,13 @@
       -	Stop : 서비스 Stop 
     - Replication Status : Replication 상태를 나타냅니다. 
       -	Running : 복제 동작중
-      -	Stop : 복제 중지 상태(확인필요)
-      -	Delay : 복제 지연(확인필요)
-      -	Error : 복제 오류(확인필요)
+      -	Stop : 복제 중지 상태
+      -	Delay : 복제 지연 (50 MB 이상의 지연이 발생)
     - Repmgr Status : Replication 상태를 나타냅니다.
       -	Running : Repmgr 동작중
       -	Stop : Repmgr 중지 상태
-      -	Error : Repmgr 오류(확인필요)
+      -	Error : Repmgr 오류
+         ex) Pod의 Member-role과 repmgr의 Role이 같지 않을때 Error 표기
     - DB Uptime : DB가 기동된 시간
     - <code>[ Action ]</code> : 추가 정보를 제공 합니다. 
       - Repmgr Cluster Show : Repmgr의 상태정보를 제공 합니다.
@@ -87,6 +87,10 @@
   - Pgpool Status : Pgpool 서비스의 상태를 나타냅니다.
     - Name : 서비스의 Instance명
     - Pgpool Status : 서비스 역할
+      -	Running : Pgpool 서비스 정상
+      -	Stop : Pgpool 서비스 중지
+      -	Error : Pgpool 서비스 에러 
+        ex) pgpool pod의 Primary member role과 host의 pg_role이 일치하지 않을때)
     - <code>[ Action ]</code> : 추가 정보를 제공 합니다. 
       - Pgpool Show Nodes : Pgpool의 상태정보를 제공 합니다.
       ```
