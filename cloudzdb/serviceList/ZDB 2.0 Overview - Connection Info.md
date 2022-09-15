@@ -18,9 +18,10 @@
     ```
 + Connection String : jdbc 를 이용한 연결 명령어 예시
 + Command Line :  client tool 을 이용한 연결 명령어 예시
-+ Auto Failover : HA 구조 일 경우 auto failover 기능을 지원 합니다. 3초마다 live 여부를 체크하며 10회 실패시 failover 가 자동으로 수행 됩니다.
++ Auto Failover : HA 구조 일 경우 auto failover 기능을 지원 합니다. 3초마다 live 여부를 체크하며 5회 실패시 failover 가 자동으로 수행 됩니다.
     ```  
     제약 사항
     1. primary 와 secondary 의 파라미터 설정이 동일 해야 합니다. (event_scheduler 제외)
     2. primary 1 node + secondary 1 node 로 구성된 HA 구조여야 합니다.
+    3. 서비스 생성 후 10분 이내의 인스턴스는 failover 대상에서 제외 됩니다.
     ```
