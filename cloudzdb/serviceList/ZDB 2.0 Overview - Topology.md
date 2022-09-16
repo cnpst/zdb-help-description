@@ -11,7 +11,7 @@
     PRIMARY 는 장애가 발생 했을 경우 SECONDARY 로 FAILOVER 될 수 있습니다.  
     이와 같이 pod 의 이름이 primary 이더라도 HA 환경에서 PRIMARY 나 SECONDARY 역할을 수행 할 수 있습니다.
     ```
-+ Replications : SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보  
++ SECONDARY : HA 환경에서 secondary Role 을 가진 POD 정보  
     ```  
     SECONDARY 는 PRIMARY 장애가 발생 했을 경우 PRIMARY 로 FAILOVER 될 수 있습니다.  
     이와 같이 pod 의 이름이 secondary 이더라도 HA 환경에서 SECONDARY 나 PRIMARY 역할을 수행 할 수 있습니다.
