@@ -33,6 +33,16 @@
     ```
   - binlog 백업 활성화 : PITR (시간기반복구) 를 하기 위해 필요한 옵션입니다.
   - binlog 백업 수행주기(분) : 분 단위로 수행 주기를 설정 할 수 있습니다.
+  - Archivelog 백업 활성화 : archivelog 백업을 설정할 수 있습니다.
+  - Archivelog 백업 수행주기(분) :지정된 수행 주기를 선택 할 수 있습니다.
+  ```
+  5분
+  6분
+  7분
+  8분
+  9분
+  10분
+  ```
 + Use Extra Backup Storage : 백업 전용 저장소를 사용 할 수 있습니다.
   - Storage Source : 사용할 수 있는 Storage 소스를 선택 할 수 있습니다.
   - Storage Type : 사용할 수 있는 Storage 유형을 선택 할 수 있습니다.
