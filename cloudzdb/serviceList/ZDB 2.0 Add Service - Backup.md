@@ -46,7 +46,7 @@
 + Use Extra Backup Storage : 백업 전용 저장소를 사용 할 수 있습니다.
   - Storage Source : 사용할 수 있는 Storage 소스를 선택 할 수 있습니다.
   - Storage Type : 사용할 수 있는 Storage 유형을 선택 할 수 있습니다.
-  - Size(GiB) : 용량을 설정 할 수 있습니다. (단위 GiB = Gigabyte)
+  - Size(GiB) : 용량을 설정 할 수 있습니다. (단위 GiB = Gibibyte)
   ```
   백업으로 인해 데이터가 저장 되어야할 저장소의 공간이 부족할 수 있습니다.
   운영 환경에서는 백업 전용 저장소를 사용하는 것이 좋습니다.
