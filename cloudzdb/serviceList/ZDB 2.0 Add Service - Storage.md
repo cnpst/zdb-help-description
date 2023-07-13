@@ -4,7 +4,7 @@
 + Data Storage
   - Storage Source : 사용할 수 있는 Storage 소스를 선택 할 수 있습니다.
   - Storage Type : 사용할 수 있는 Storage 유형을 선택 할 수 있습니다.
-  - Size(GiB) : 용량을 설정 할 수 있습니다. (단위 GiB = Gigabyte)
+  - Size(GiB) : 용량을 설정 할 수 있습니다. (단위 GiB = Gibibyte)
     ```
     custom : 값을 직접 설정 할 수 있습니다.
     ```
